@@ -21,6 +21,7 @@ TextView resu ;
 EditText taille,poids;
 RadioButton R1 ,R2;
 CheckBox chechB ;
+Button b ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,11 @@ CheckBox chechB ;
         R1 = (RadioButton) findViewById(R.id.Radio1_metre);
         R2 = (RadioButton) findViewById(R.id.Radio2_Centmetre);
         chechB =(CheckBox)findViewById((R.id.CheckB_Mega));
+        b = findViewById(R.id.Bnt_test);
         resu.setText("");
-    }
+
+        b.setOnLongClickListener(lg);
+            }
     public void calcule(double Resultat)
     {
         DecimalFormat df = new DecimalFormat("#.##");
@@ -102,5 +106,11 @@ else
 
 
     }
+  View.OnLongClickListener lg = new View.OnLongClickListener() {
+      @Override
+      public boolean onLongClick(View v) {
+          return true;
+      }
+  };
     
 }
